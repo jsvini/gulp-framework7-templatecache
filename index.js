@@ -10,9 +10,9 @@ var htmlJsStr = require('js-string-escape');
  * "constants"
  */
 
-var TEMPLATE_HEADER = 'angular.module("<%= module %>"<%= standalone %>).run(["$templateCache", function($templateCache) {';
-var TEMPLATE_BODY = '$templateCache.put("<%= url %>","<%= contents %>");';
-var TEMPLATE_FOOTER = '}]);';
+var TEMPLATE_HEADER = '(function(Amigo){';
+var TEMPLATE_BODY = 'Amigo.app.cache.push({"url":"views/<%= url %>", "content":"<%= contents %>", "time":"1447272963541"});';
+var TEMPLATE_FOOTER = '})(Amigo);';
 
 var DEFAULT_FILENAME = 'templates.js';
 var DEFAULT_MODULE = 'templates';
